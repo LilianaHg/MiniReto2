@@ -1,10 +1,10 @@
 import React from 'react'
+import Header from './Components/Header'
 
 const App = () => {
   return (
     <div>
-        <h1>Tailwind </h1>
-        <h2>CSS</h2>
+      <Header></Header>
     </div>
   )
 }
