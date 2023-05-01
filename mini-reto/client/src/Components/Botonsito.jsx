@@ -3,6 +3,10 @@ import React,{ useState } from 'react'
 
 function DropDown({onButtonClick}) {
     const [isOpen, setIsOpen] = useState(false);
+    const handleButtonClick = (value) => {
+        setIsOpen(false);
+        onButtonClick(value);
+      }
   return (
     <div>
         <div className="relative">
@@ -21,7 +25,7 @@ function DropDown({onButtonClick}) {
                                                 <img src="https://i.pinimg.com/564x/30/12/8f/30128fef8941605bcf6f7748184a9483.jpg" alt="Imagen" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
                                             </div>
                                             <div className="flex-auto">
-                                                <button onClick={()=> onButtonClick('Serums')} className="block font-semibold text-gray-900">
+                                                <button  onClick={()=> handleButtonClick('Serums')} className="block font-semibold text-gray-900">
                                                     Serums
                                                     <span className="absolute inset-0"></span>
                                                 </button>
@@ -32,7 +36,7 @@ function DropDown({onButtonClick}) {
                                                 <img src="https://i.pinimg.com/564x/4d/1c/13/4d1c130da06d741128d7dcce9d71af32.jpg" alt="Imagen" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
                                             </div>
                                             <div className="flex-auto">
-                                                <button onClick={()=> onButtonClick('Cremas')}  className="block font-semibold text-gray-900">
+                                                <button onClick={()=> handleButtonClick('Cremas')}  className="block font-semibold text-gray-900">
                                                     Cremas
                                                     <span className="absolute inset-0"></span>
                                                 </button>
@@ -43,7 +47,7 @@ function DropDown({onButtonClick}) {
                                                 <img src="https://i.pinimg.com/564x/d8/9b/6d/d89b6deb3590c496c6370e75e89fed22.jpg" alt="Imagen" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
                                             </div>
                                             <div className="flex-auto">
-                                                <button onClick={()=> onButtonClick('Bloqueadores')}  className="block font-semibold text-gray-900">
+                                                <button onClick={()=> handleButtonClick('Bloqueadores')}  className="block font-semibold text-gray-900">
                                                     Bloqueadores
                                                     <span className="absolute inset-0"></span>
                                                 </button>
@@ -54,7 +58,7 @@ function DropDown({onButtonClick}) {
                                                 <img src="https://i.pinimg.com/564x/ad/b3/aa/adb3aafae0dd5691f888c6130179a0a7.jpg" alt="Imagen" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
                                             </div>
                                             <div className="flex-auto">
-                                                <button onClick={()=> onButtonClick('Mascarillas')}  className="block font-semibold text-gray-900">
+                                                <button onClick={()=> handleButtonClick('Mascarillas')}  className="block font-semibold text-gray-900">
                                                     Mascarillas
                                                     <span className="absolute inset-0"></span>
                                                 </button>
@@ -65,7 +69,7 @@ function DropDown({onButtonClick}) {
                                                 <img src="https://i.pinimg.com/564x/e3/99/8e/e3998e62fab05511443294e0d0c5752a.jpg" alt="Imagen" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
                                             </div>
                                             <div className="flex-auto">
-                                                <button onClick={()=> onButtonClick('Limiadores')}  className="block font-semibold text-gray-900">
+                                                <button onClick={()=> handleButtonClick('Limiadores')}  className="block font-semibold text-gray-900">
                                                     Limpiadores
                                                     <span className="absolute inset-0"></span>
                                                 </button>
