@@ -637,6 +637,9 @@ video {
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+.place-content-center {
+  place-content: center;
+}
 .items-start {
   align-items: flex-start;
 }
