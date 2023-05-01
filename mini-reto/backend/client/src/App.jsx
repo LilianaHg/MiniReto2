@@ -7,6 +7,14 @@ import Productos4 from './Components/Productos4'
 import Productos5 from './Components/Productos5'
 
 const App = () => {
+  const[data,setData] = React.useState(null);
+
+  React.useEffect(()=>{
+    fetch("/api/")
+      .then((res) => res.json)
+      .then((data) => setData(data.message));
+  })
+
   const [selectedComponent,setSelectedComponent] = useState(Productos);
 
   const handleButtonClick = (component) => {

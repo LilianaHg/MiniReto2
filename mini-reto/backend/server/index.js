@@ -1,21 +1,30 @@
-// server/index.js
 const express = require("express");
-const PORT = process.env.PORT || 3000;
-const app = express();
+
+const bodyParser = require("body-parser");
 
 const fs = require("fs");
 
-app.listen(PORT, () => {
-console.log(`Server listening on ${PORT}`);
+const PORT = process.env.PORT || 3001;
+
+const app = express();
+
+const exp = require("constants");
+
+const mysql = require("mysql");
+const { error } = require("console");
+
+app.use(bodyParser.json)
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'Usuario1',
+    password: '1234',
+    database: 'skincare'
 });
 
-app.get("/api",(req,res) => {
-    res.json({message:"Hello from server side!"});
-});
+connection.connect();
 
-app.get("/api/pet", (req, res) => {
-    fs.readFile( __dirname + "/" + "pets.json", "utf8", (err, data) => {
-        console.log( data );
-        res.end( data );
-    });
+connection.query('SELECT 1 + 1 AS solution', function (error, results, fields){
+    if(error) throw error;
+    console.log('The solution is: ', results[0].solution);
 });
